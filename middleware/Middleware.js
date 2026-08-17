@@ -18,7 +18,9 @@ const notFound = (req, res, next) => {
   next(error);
 };
 
-// Centralized error handling middleware
+// Centralized error handling middleware kyoki isme 4 parameter hai
+// 500 matlab internal server error
+
 const errorHandler = (err, req, res, next) => {
   let statusCode = res.statusCode === 200 ? 500 : res.statusCode;
   let message = err.message || 'Server Error';

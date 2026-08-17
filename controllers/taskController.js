@@ -7,12 +7,12 @@ const createTask = async (req, res, next) => {
   try {
     const { title, description, status, priority, dueDate } = req.body;
 
-    // Validate title presence
+    // check ki user ne title bheja hai ki nhi
     if (!title || title.trim() === '') {
       return res.status(400).json({
         success: false,
         message: 'Title is required'
-      });
+      }); 
     }
 
     // Validate status if provided
@@ -58,12 +58,12 @@ const getAllTasks = async (req, res, next) => {
     const { status, priority } = req.query;
     const filter = {};
 
-    // Filter by status if query parameter is provided
+    //  agr user status de rha hai tab bhi filter me daal do
     if (status) {
       filter.status = status;
     }
 
-    // Filter by priority if query parameter is provided
+    // agr user priority de rha hai tab bhi filter me daal do
     if (priority) {
       filter.priority = priority;
     }

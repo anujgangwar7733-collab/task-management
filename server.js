@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const connectDB = require('./config/db');
 const taskRoutes = require('./routes/taskRoutes');
-const { notFound, errorHandler } = require('./middleware/errorMiddleware');
+const { notFound, errorHandler } = require('./middleware/Middleware');
 
 // Initialize Express App
 const app = express();

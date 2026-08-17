@@ -8,12 +8,13 @@ const {
   deleteTask,
   updateTaskStatus
 } = require('../controllers/taskController');
-const { validateObjectId } = require('../middleware/errorMiddleware');
+const { validateObjectId } = require('../middleware/Middleware');
 
 // Routes mounted at /api/tasks
 router.route('/')
   .get(getAllTasks)
   .post(createTask);
+
 
 router.route('/:id')
   .get(validateObjectId, getTaskById)
